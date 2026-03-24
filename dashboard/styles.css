@@ -1,0 +1,124 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b1220;
+  --panel: #111a2c;
+  --panel-border: #2b3f67;
+  --text: #d8e2ff;
+  --muted: #8ea6d9;
+  --green: #43d28b;
+  --red: #ff6b7a;
+  --yellow: #ffd166;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: linear-gradient(180deg, #070d1a, var(--bg));
+  color: var(--text);
+  padding: 24px;
+}
+
+header h1 {
+  margin: 0 0 8px;
+}
+
+header p {
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+button {
+  background: #1e3258;
+  border: 1px solid #2f4b80;
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #294574;
+}
+
+#status {
+  color: var(--muted);
+}
+
+#chartGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.plot {
+  width: 100%;
+  min-height: 360px;
+}
+
+.plot.small {
+  min-height: 240px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  background: #0e1728;
+  border: 1px solid #29406b;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.long {
+  background: rgba(67, 210, 139, 0.2);
+  color: var(--green);
+}
+
+.short {
+  background: rgba(255, 107, 122, 0.2);
+  color: var(--red);
+}
+
+.wait {
+  background: rgba(255, 209, 102, 0.18);
+  color: var(--yellow);
+}
+
+.card p {
+  margin: 6px 0;
+  color: var(--muted);
+}
+
+.note {
+  margin-top: 10px;
+  color: var(--muted);
+}
