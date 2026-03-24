@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Multi-Timeframe Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Dashboard Phân Tích BTC / ETH / XAUT</h1>
+      <p>
+        Chỉ báo: RSI(14), MA34, MA89, MACD(12,26,9), Stochastic(14,3). Tín hiệu theo
+        khung 1H / 4H / 1D.
+      </p>
+    </header>
+
+    <section class="toolbar">
+      <label>
+        Tài sản:
+        <select id="assetSelect">
+          <option value="BTCUSD">BTCUSD</option>
+          <option value="ETHUSD">ETHUSD</option>
+          <option value="XAUTUSD">XAUTUSD</option>
+        </select>
+      </label>
+      <button id="refreshBtn">Làm mới dữ liệu</button>
+      <span id="status">Sẵn sàng.</span>
+    </section>
+
+    <section id="chartGrid">
+      <article class="panel">
+        <h2>Biểu đồ giá + MA34/MA89</h2>
+        <div id="priceChart" class="plot"></div>
+      </article>
+
+      <article class="panel">
+        <h2>RSI(14)</h2>
+        <div id="rsiChart" class="plot small"></div>
+      </article>
+
+      <article class="panel">
+        <h2>MACD</h2>
+        <div id="macdChart" class="plot small"></div>
+      </article>
+
+      <article class="panel">
+        <h2>Stochastic</h2>
+        <div id="stochChart" class="plot small"></div>
+      </article>
+    </section>
+
+    <section class="panel" id="strategySection">
+      <h2>Chiến lược giao dịch theo đa khung</h2>
+      <div id="strategyCards" class="cards"></div>
+      <p class="note">
+        Lưu ý: Đây là tín hiệu kỹ thuật định lượng để tham khảo, không phải lời khuyên đầu tư.
+      </p>
+    </section>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

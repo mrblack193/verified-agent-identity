@@ -196,3 +196,28 @@ For all other ways to pass environment variables to a skill see the [OpenClaw en
 ## Documentation
 
 See [SKILL.md](SKILL.md) for detailed usage instructions and examples.
+
+## Trading Dashboard (BTC/ETH/XAUT)
+
+Repo now includes a lightweight frontend dashboard at `dashboard/index.html` for daily technical monitoring:
+
+- Symbols: `BTCUSD`, `ETHUSD`, `XAUTUSD`
+- Timeframes: `1H`, `4H`, `1D`
+- Indicators: `RSI(14)`, `MA34`, `MA89`, `MACD(12,26,9)`, `Stochastic(14,3)`
+- Auto-generated strategy cards per timeframe with directional bias (`LONG/SHORT/WAIT`) and estimated holding duration.
+
+### Run locally
+
+From repo root:
+
+```bash
+python3 -m http.server 8080
+```
+
+Then open:
+
+```text
+http://localhost:8080/dashboard/
+```
+
+Data source: Kraken public OHLC endpoint (`/0/public/OHLC`) with pairs `XXBTZUSD`, `XETHZUSD`, `XAUTZUSD`.
